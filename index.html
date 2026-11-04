@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10231d"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon.svg"><link rel="stylesheet" href="style.css">
+  <title>Cep Finans</title>
+</head>
+<body>
+<header><div><small>ÇEVRİMDIŞI • SADECE BU CİHAZ</small><h1>Cep Finans</h1></div><button id="backupBtn" class="ghost">Yedekle</button></header>
+<main>
+  <section id="dashboard" class="page active">
+    <div class="total"><span>Toplam net durum</span><strong id="netTotal">₺0,00</strong><small id="accountCount">Henüz hesap yok</small></div>
+    <h2>Hesaplar</h2><div id="accountCards" class="cards"></div>
+    <h2>12 aylık nakit akışı</h2><div id="forecast" class="forecast"></div>
+  </section>
+  <section id="accounts" class="page"><div class="sectionTitle"><h2>Hesaplar ve kartlar</h2><button id="newAccount">+ Hesap</button></div><div id="accountsList" class="list"></div></section>
+  <section id="transactions" class="page"><div class="sectionTitle"><h2>Hareketler</h2><button id="newTx">+ Hareket</button></div><div id="transactionsList" class="list"></div></section>
+  <section id="more" class="page"><h2>Ayarlar ve güvenlik</h2><article><h3>Şifreli yedek</h3><p>Yedek, yalnızca belirlediğiniz parola ile açılabilir. Parolayı kaybederseniz geri yükleme yapılamaz.</p><button id="backupBtn2">Şifreli yedek oluştur</button><label class="fileBtn">Şifreli yedeği geri yükle<input id="restoreFile" type="file" accept="application/json,.cepfinans"></label></article><article><h3>Veri saklama</h3><p>Tüm kayıtlar bu iPhone’daki IndexedDB’de tutulur. Uygulama hiçbir sunucuya finansal veri göndermez.</p></article><article><h3>İpucu</h3><p>Kredi kartı alışverişlerinde taksit sayısını girin. Her ay için ayrı bir planlı borç hareketi oluşturulur.</p></article></section>
+</main>
+<nav><button data-page="dashboard" class="selected">Özet</button><button data-page="accounts">Hesaplar</button><button data-page="transactions">Hareketler</button><button data-page="more">Diğer</button></nav>
+<dialog id="modal"><form method="dialog" id="modalForm"><button class="close" value="cancel" aria-label="Kapat">×</button><div id="formContent"></div></form></dialog>
+<div id="toast" role="status"></div><script src="app.js"></script>
+</body></html>
